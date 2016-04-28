@@ -1,0 +1,84 @@
+<%=content_for :content_pane do%>
+            <div class="scroll">
+                <div class="scrollContainer">
+					
+                    <!-- beg of home -->
+                    <div class="panel" id="home">
+                    	<h1>About the game</h1>
+                    	<div class="col_400 float_l">
+							  <div style="margin: 10px; height: 250px; max-height: 250px;overflow: auto; overflow-x:hidden;" ">
+							    <p>
+							    	~ From Wikipedia, the free encyclopedia ~
+									<h3><span>C</span>onnect Four</h3> (also known as Captain's Mistress, Four Up, Plot Four, Find Four, Fourplay, 
+									Four in a Row, Four in a Line and Gravitrips (in Soviet Union) ) is a two-player 
+									connection game in which the players first choose a color and then take turns dropping 
+									colored discs from the top into a seven-column, six-row vertically suspended grid. 
+									The pieces fall straight down, occupying the next available space within the column. 
+									The objective of the game is to connect four of one's own discs of the same color next to 
+									each other vertically, horizontally, or diagonally before your opponent. 
+									Connect Four is a strongly solved game. The first player can always win by playing the right moves.
+								</p>
+								<p>
+									<h3><span>H</span>ow to play</h3>
+									The objective of the game is to connect four of one's own discs 
+									of the same color next to each other vertically, horizontally, 
+									or diagonally before your opponent. Connect Four is a strongly solved game. 
+									The first player can always win by playing the right moves.		
+								</p>
+								<p>
+									<h3><span>A</span>lgorithm</h3>
+									As opposed to calculating perfect play, computer algorithms that play 
+									Connect Four must be able to run in real time and find good moves in just 
+									a few seconds. The most common real-time algorithm for Connect Four is 
+									alpha-beta pruning, usually run at a depth of around 10 plies. 
+									While this method can play strongly against humans, ultimately a more 
+									efficient way to get a fast and strong solution is using a Monte Carlo 
+									tree search. This method has a particular advantage in Connect Four 
+									since many games last close to the end when one player is forced to play 
+									a move that will allow their opponent to play a winning move. Monte Carlo 
+									uses simulations of the whole game when building its tree, and thus 
+									statistically provides moves that are not only good in the present, 
+									but would also bring about good end game positions.
+									Due to fact that the Monte Carlo tree search was first popularized in 2006 
+									for a Computer Go program, implementation of the method for Connect Four 
+									is rare. The few examples that exist generally outplay their alpha-beta 
+									pruning counterparts in the end game.		
+								</p>
+							  </div>
+                        </div>
+                        <div class="col_400 float_r">
+                            <%=link_to image_tag("ConnectFourGameBoard01.png")%>
+                        </div>
+                    </div>
+                    <!-- end of home -->
+
+				    <!-- Beg of start -->
+                    <div class="panel" id="start">
+                        <h1>Connect Four Game
+                        	<span>Players</span>
+                        </h1>
+							<%= form_tag(start_path, :method => "get", :class => 'basic-grey') do%>
+								<label>
+									<span>Player 1</span>
+									<%= text_field_tag(:player1_nickname)%>
+								</label>
+									
+									
+								<label>
+									<span>Player 2</span>
+									<%= text_field_tag(:player2_nickname)%>
+								</label>
+								
+								<label>
+									<span>&nbsp;</span>
+									<%= submit_tag("Play ConnectFour now!")%>
+								</label>
+							<% end %>
+                            <ul class="service_list">
+                            </ul>
+                    </div>
+                    <!-- End of start -->
+
+               </div>
+            </div>
+<%end%>

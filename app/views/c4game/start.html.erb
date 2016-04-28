@@ -1,0 +1,41 @@
+<%=content_for :play_pane do%>
+	<script type="text/javascript">
+		var player1 ="<%=@c4gamepanel.player1.nickname%>";
+		var avatar1 ="<%=@c4gamepanel.player1.avatar%>";
+		var player2 ="<%=@c4gamepanel.player2.nickname%>";
+		var avatar2 ="<%=@c4gamepanel.player2.avatar%>";
+	</script>
+
+	<table>
+		<tr>
+			<td valign="center"><img src="<%=@c4gamepanel.player1.avatar%>" alt="Avatar" id="player_avatar" height="50" width="50"></td>
+			<td></td>
+			<td valign="center"><h1 id="player_nickname"><%=@c4gamepanel.player1.nickname%></h1></td>
+		</tr>
+	</table>
+	
+    <table id = "C4GameBoard" border="0" cellspacing="0">
+      <tr class = "0">
+        <% (@c4gamepanel.slots). each do |slot| %>
+        
+          <td style="pading:0"> 
+            <button 
+          		style = "height:50px;width:50px" 
+          		id = "<%= slot.x %>_<%= slot.y %>" 
+          		
+            	onclick = "play(<%= slot.x %>, <%= slot.y %>)"><img id="AVATAR_ID_<%= slot.x %>_<%= slot.y %>" src="images/c4panel/AVATAR_BLANK.png" height="30" width="30"><input type = "hidden" id = "played_<%= slot.x %>_<%= slot.y %>" value = "<%= slot.played %>" /> 
+            </button>
+          </td>
+
+          <% if slot.y == (@c4gamepanel.cols - 1)  %>
+            </tr>
+            <% if slot.x != (@c4gamepanel.rows - 1)  %>
+              <tr>
+            <% end %>
+          <% end %>
+        <% end %>
+    </table>
+
+    <input type="hidden" id="clicks" value="0"/>
+    <hr/>
+<%end%>

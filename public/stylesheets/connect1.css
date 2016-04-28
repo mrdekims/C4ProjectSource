@@ -1,0 +1,56 @@
+#layout {
+	padding-left: 25%;
+	position: relative;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 25%;
+	background: rgb(24, 33, 61);
+	color: #fff;
+}
+
+/* board and tallyboard table */
+
+#tallyboard, #board {
+	width:100%;
+	background: #fff;
+	padding: 0.5em;
+}
+
+#tallyboard, #tallyboard thead, #board {
+	text-align:center;
+}
+
+#playerCellA {
+	color:rgb(248, 93, 93);
+}
+
+#playerCellB {
+	color:rgb(97, 97, 255);
+}
+
+#turnCell {
+	background:rgb(248, 93, 93);
+	color:white;
+}
+
+/* buttons */
+.cellButton {
+	background-color: #fff;
+	color: #fff;
+	overflow: hidden;
+	padding: 0.3em;
+	-moz-box-shadow: 0 0 3px 1px #aaaaaa;
+	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
+	box-shadow: 0 0 3px 1px #aaaaaa;
+	margin: 0.1em 0 0 0;
+	border: none;
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-khtml-border-radius: 100px;
+	text-align: center;
+}
